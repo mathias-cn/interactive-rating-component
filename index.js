@@ -5,10 +5,11 @@ let contentTy = document.querySelector('.content-ty')
 
 ratingItems.forEach((item) => {
     item.addEventListener('click', () => {
-        if (document.querySelector('.rating-list-item-active') == undefined) {
+        let activeItem = document.querySelector('.rating-list-item-active')
+        if (activeItem == undefined) {
             item.classList.add('rating-list-item-active')
-        } else if (document.querySelector('.rating-list-item-active') != undefined && item.classList.contains('rating-list-item-active') != true) {
-            document.querySelector('.rating-list-item-active').classList.remove('rating-list-item-active')
+        } else if (activeItem != undefined && item.classList.contains('rating-list-item-active') != true) {
+            activeItem.classList.remove('rating-list-item-active')
             item.classList.add('rating-list-item-active')
         } else {
             item.classList.remove('rating-list-item-active')
@@ -17,16 +18,17 @@ ratingItems.forEach((item) => {
 })
 
 submitBtn.addEventListener('click', (ev) => {
+    let activeItem = document.querySelector('.rating-list-item-active')
     let button = ev.target
     let selectedValue
     
-    if (document.querySelector('.rating-list-item-active') == undefined) {
+    if (activeItem == undefined) {
         button.classList.add('error-anim')
         setTimeout(() => {
             button.classList.remove('error-anim')
         }, 500)
     } else {
-        selectedValue = document.querySelector('.rating-list-item-active').dataset.rating
+        selectedValue = activeItem.dataset.rating
         document.querySelector('.selected-rating-num').innerText = selectedValue
         contentRating.classList.add('exit-anim')
         setTimeout(() => {
