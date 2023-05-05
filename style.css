@@ -4,9 +4,9 @@
     --primary-color: hsl(25, 97%, 53%);
     --neutral-color-1: hsl(0, 0%, 100%);
     --neutral-color-2: hsl(217, 12%, 63%);
-    --neutral-color-3: hsl(216, 12%, 54%);
-    --neutral-color-4: hsl(213, 19%, 18%);
-    --neutral-color-5: hsl(216, 12%, 8%);
+    --neutral-color-3: #7c8798;
+    --neutral-color-4: #252d37;
+    --neutral-color-5: #121417;
 }
 
 * {
@@ -18,4 +18,108 @@
     outline: none;
     list-style: none;
     text-decoration: none;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+body {
+    background-color: var(--neutral-color-5);
+}
+
+.container {
+    max-width: 400px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin: auto;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(18,20,23);
+    background: radial-gradient(circle, rgba(18,20,23,1) 0%, rgba(37,45,55,1) 100%);
+    background-size: 150%;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.title p {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.text p,
+.rating-list li {
+    color: var(--neutral-color-2);
+}
+
+.rating-container {
+    width: 100%;
+}
+
+.rating-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.star,
+.rating-list li {
+    background-color: var(--neutral-color-4);
+    padding: 1rem;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rating-list li {
+    width: 80%;
+    aspect-ratio: 1/1;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.rating-list li:hover {
+    color: var(--neutral-color-1);
+    background-color: var(--neutral-color-3);
+}
+
+.rating-list li:focus,
+.rating-list li:active {
+    background-color: var(--primary-color);
+    color: var(--neutral-color-1);
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    border-radius: 100px;
+    font-size: 17px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: .8rem ;
+}
+
+.rating-list li,
+.submit-btn {
+    cursor: pointer;
+    transition: all 100ms ease-in;
+}
+
+.submit-btn:hover {
+    background-color: var(--neutral-color-1);
+    color: var(--primary-color);
+}
+
+@media (max-width:400px) {
+    .container {
+        width: calc(100% - 16px);
+    }
 }
