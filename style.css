@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+    --primary-color: hsl(25, 97%, 53%);
+    --neutral-color-1: hsl(0, 0%, 100%);
+    --neutral-color-2: hsl(217, 12%, 63%);
+    --neutral-color-3: hsl(216, 12%, 54%);
+    --neutral-color-4: hsl(213, 19%, 18%);
+    --neutral-color-5: hsl(216, 12%, 8%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+    border: none;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+}
